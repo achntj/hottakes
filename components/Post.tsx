@@ -28,7 +28,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
       await fetch(
         `${
           process.env.NODE_ENV === "production"
-            ? "https://pandoras-box.vercel.app/"
+            ? "https://hottakes.achintyajha.com/"
             : "http://localhost:3000"
         }/api/complete/${id}`,
         {
