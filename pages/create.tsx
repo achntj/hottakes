@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import Router from "next/router";
 import { NextPage } from "next";
 import absoluteUrl from "next-absolute-url";
+import { inDevEnvironment } from "../lib/DevEnv";
 
 const Draft: NextPage = () => {
   const [question, setQuestion] = useState("");
@@ -30,47 +31,53 @@ const Draft: NextPage = () => {
 
   return (
     <Layout>
-      <div>
-        <form onSubmit={submitData}>
-          <h1>New Poll</h1>
-          <div className="mb-5">
-            <a>
-              <button disabled={disable} type="submit">
-                Publish
-              </button>
-            </a>
-          </div>
-          <div>
-            <input
-              autoFocus
-              required
-              onChange={(e) => setQuestion(e.target.value)}
-              placeholder="Question"
-              type="text"
-              value={question}
-              className="w-full outline-none bg-transparent text-3xl font-bold"
-            />
-            <textarea
-              required
-              cols={50}
-              onChange={(e) => setOptionA(e.target.value)}
-              placeholder="Option A"
-              rows={8}
-              value={optionA}
-              className="w-full outline-none h-auto resize-none bg-transparent"
-            />
-            <textarea
-              required
-              cols={50}
-              onChange={(e) => setOptionB(e.target.value)}
-              placeholder="Option B"
-              rows={8}
-              value={optionB}
-              className="w-full outline-none h-auto resize-none bg-transparent"
-            />
-          </div>
-        </form>
-      </div>
+      {inDevEnvironment ? (
+        <div>
+          <form onSubmit={submitData}>
+            <h1>New Poll</h1>
+            <div className="mb-5">
+              <a>
+                <button disabled={disable} type="submit">
+                  Publish
+                </button>
+              </a>
+            </div>
+            <div>
+              <input
+                autoFocus
+                required
+                onChange={(e) => setQuestion(e.target.value)}
+                placeholder="Question"
+                type="text"
+                value={question}
+                className="w-full outline-none bg-transparent text-3xl font-bold"
+              />
+              <textarea
+                required
+                cols={50}
+                onChange={(e) => setOptionA(e.target.value)}
+                placeholder="Option A"
+                rows={8}
+                value={optionA}
+                className="w-full outline-none h-auto resize-none bg-transparent"
+              />
+              <textarea
+                required
+                cols={50}
+                onChange={(e) => setOptionB(e.target.value)}
+                placeholder="Option B"
+                rows={8}
+                value={optionB}
+                className="w-full outline-none h-auto resize-none bg-transparent"
+              />
+            </div>
+          </form>
+        </div>
+      ) : (
+        <div>
+          <h1>Unauthorized :(</h1>
+        </div>
+      )}
     </Layout>
   );
 };
