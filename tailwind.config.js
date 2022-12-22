@@ -10,12 +10,23 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
+      title: ["Recife"],
       sans: [
         "Helvetica Neue",
         "Helvetica",
         "BlinkMacSystemFont",
-        "Segoe UI",
         "Roboto",
+        "Segoe UI",
+        "system-ui",
+        "sans-serif",
+      ],
+      body: [
+        "Epilogue",
+        "Helvetica Neue",
+        "Helvetica",
+        "BlinkMacSystemFont",
+        "Roboto",
+        "Segoe UI",
         "system-ui",
         "sans-serif",
       ],

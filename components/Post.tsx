@@ -56,7 +56,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
       </p>
       <div className="bg-neutral-200 rounded">
         <div
-          className="bg-red-200 transition h-2 rounded transition-transform"
+          className="bg-red-200 transition h-2 rounded"
           style={{
             width: `${Math.round((aCount / (aCount + bCount)) * 100)}%`,
           }}

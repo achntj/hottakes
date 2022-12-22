@@ -24,7 +24,7 @@ const Home: React.FC<Props> = (props) => {
     <div>
       <Layout>
         <div className="text-center">
-          <h1>The Internet's Hot Takes</h1>
+          <h1 className="font-title">The Internet's Hot Takes</h1>
           <p className="text-sm">
             Developed by{" "}
             <a
