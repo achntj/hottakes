@@ -1,6 +1,6 @@
-# Pandora
+# Hot Takes 
 
-Find more about this project [here](https://achintyajha.com/posts/pandora).
+A polling web-app.
 
 ## Setup
 
